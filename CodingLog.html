@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bare Bones Website</title>
     <style>
-        #hidden-spouse-1 {
-          width: 100%;
-          padding: 50px 0;
-          text-align: center;
-          background-color: lightblue;
-          margin-top: 20px;
-        }
-        </style>
+        
+        body {
+  --thumbNumber: "5"; 
+}
+
+#slider {
+  -webkit-appearance: none;
+  outline: none;
+  width: 400px;
+  height: 3px;
+  background-color: #555;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background: black;
+}
+
+#slider::-webkit-slider-thumb::before {
+  content: var(--thumbNumber);
+}
+</style>
 </head>
 <body>
 <form>
@@ -49,47 +66,35 @@
         <!--This is the input for the primary language skills of the applicant-->
         <hr>
         <label for="language-speak">Language Skills: Speaking:</label><br>
-            <input type="radio" name="speak_level" value="level_9">
-            <label for="lvl_9">Level 9</label><br>
-            <input type="radio" name="speak_level" value="level_8">
-            <label for="lvl_8">Level 8</label><br>
-            <input type="radio" name="speak_level" value="level_5-7">
-            <label for="lvl_5-7">Level 5-7</label><br>
-            <input type="radio" name="speak_level" value="4_or_less">
-            <label for="lvl_4_or_less">Level 4 or less</label><br>
+        <p><b>Enter your Speaking Level into the slider:</b></p> 
+            <div>
+                <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
+                <output>5</output>
+            </div>
         <hr>
         <br>
         <label for="language-listen">Language Skills: Listening:</label><br>
-            <input type="radio" name="listen_level" value="level_9">
-            <label for="lvl_9">Level 9</label><br>
-            <input type="radio" name="listen_level" value="level_8">
-            <label for="lvl_8">Level 8</label><br>
-            <input type="radio" name="listen_level" value="level_5-7">
-            <label for="lvl_5-7">Level 5-7</label><br>
-            <input type="radio" name="listen_level" value="4_or_less">
-            <label for="lvl_4_or_less">Level 4 or less</label><br>
+        <p><b>Enter your Listening Level into the slider:</b></p> 
+        <div>
+            <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
+            <ouput>5</ouput>
+        </div>
         <hr>
         <br>
         <label for="language-read">Language Skills: Reading</label><br>
-            <input type="radio" name="read_level" value="level_9">
-            <label for="lvl_9">Level 9</label><br>
-            <input type="radio" name="read_level" value="level_8">
-            <label for="lvl_8">Level 8</label><br>
-            <input type="radio" name="read_level" value="level_5-7">
-            <label for="lvl_5-7">Level 5-7</label><br>
-            <input type="radio" name="read_level" value="4_or_less">
-            <label for="lvl_4_or_less">Level 4 or less</label><br>
+        <p><b>Enter your Reading Level into the slider:</b></p> 
+        <div>
+            <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
         <hr>
         <br>
         <label for="language-write">Language Skills: Writing</label><br>
-        <input type="radio" name="write_level" value="level_9">
-            <label for="lvl_9">Level 9</label><br>
-            <input type="radio" name="write_level" value="level_8">
-            <label for="lvl_8">Level 8</label><br>
-            <input type="radio" name="write_level" value="level_5-7">
-            <label for="lvl_5-7">Level 5-7</label><br>
-            <input type="radio" name="write_level" value="4_or_less">
-            <label for="lvl_4_or_less">Level 4 or less</label><br>
+        <p><b>Enter your Writing Level into the slider:</b></p> 
+            <div>
+                <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
+                <output>5</output>
+            </div>
             <hr>
 
         <!--This is the input for the secondary language skills of the applicant-->
@@ -118,7 +123,7 @@
         <button onclick="myFunction()">YES</button>
         <div id="hidden-spouse-1">
             <!--This is the input for the adaptability points of the applicant-->
-            This is where the adaptability points will go!!!
+            This is where the adaptability points will go!!! then the submit button for the points to be calculated
         </div><br>
         
         <button onclick="myFunction2()">NO</button>
@@ -128,15 +133,5 @@
         
 </fieldset>
 </form>
-<script>
-    function myFunction() {
-      var x = document.getElementById("hidden-spouse-1");
-      if (x.style.display == "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    </script>
 </body>
 </html>
