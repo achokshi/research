@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bare Bones Website</title>
+    <style>
+        #hidden-spouse-1 {
+          width: 100%;
+          padding: 50px 0;
+          text-align: center;
+          background-color: lightblue;
+          margin-top: 20px;
+        }
+        </style>
 </head>
 <body>
 <form>
     <fieldset>
         
-        <!--This is the title of the filedset within the form page-->
+        <!--This is the title of the fieldset within the form page-->
         <legend>Federal Skilled Workers Program </legend>
         
         <!--This is the input for the first name-->
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
         
-        <!--This is the input for te last name-->
+        <!--This is the input for the last name-->
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname"><br>
         
@@ -37,7 +46,7 @@
         <option value="Doctoral">University degree at the Doctoral (PhD) level</option>
         </select><br><br>
         
-        <!--This is the input for the language skills of the applicant-->
+        <!--This is the input for the primary language skills of the applicant-->
         <hr>
         <label for="language-speak">Language Skills: Speaking:</label><br>
             <input type="radio" name="speak_level" value="level_9">
@@ -81,6 +90,15 @@
             <label for="lvl_5-7">Level 5-7</label><br>
             <input type="radio" name="write_level" value="4_or_less">
             <label for="lvl_4_or_less">Level 4 or less</label><br>
+            <hr>
+
+        <!--This is the input for the secondary language skills of the applicant-->
+        <label for="secondary-langauge">Secondary Language Skills</label><br>
+        <p>Do you have a CLB level of at least 5 in each of the 4 langauge categories?</p><br>
+        <input type="radio" name="secondary-langauge" value="yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" name="secondary-langauge" value="no">
+        <label for="no">No</label><br>
         <hr>
     
         <!--This is the input for the work experience of the applicant-->
@@ -94,31 +112,31 @@
         </select><br><br>
         <hr>
         <br>
-    <!--This is the input for the adaptability points of the applicant-->
-        <label for="adaptability">Adaptability Points:</label><br><br>
-            <label for="spouse_language">Your spouse has reached minimum langauge standard? :</label><br>
-            <input type="radio" name="spouse_langauge_level" value="yes">
-            <label for="yes">Yes</label><br>
-            <input type="radio" name="spouse_langauge_level" value="no">
-            <label for="no">No</label><br><br>
-
-            <label for="spouse_past_studies">Your spouse has completed 2 years of full time study? :</label><br>
-            <input type="radio" name="spouse_past_studies" value="yes">
-            <label for="yes">Yes</label><br>
-            <input type="radio" name="spouse_past_studies" value="no">
-            <label for="no">No</label><br><br>
-
-            <label for="spouse_past_work">Your spouse has completed 1 year of full time work in Canada? :</label><br>
-            <input type="radio" name="spouse_past_work" value="yes">
-            <label for="yes">Yes</label><br>
-            <input type="radio" name="spouse_past_work" value="no">
-            <label for="no">No</label><br>
-
-
-
-
-
-    </fieldset>
+    
+        <!--This is the input to see if the applicant has a spouse,-->
+        <label for="spouse-option">Do you have a spouse?</label><br>
+        <button onclick="myFunction()">YES</button>
+        <div id="hidden-spouse-1">
+            <!--This is the input for the adaptability points of the applicant-->
+            This is where the adaptability points will go!!!
+        </div><br>
+        
+        <button onclick="myFunction2()">NO</button>
+        <div id="hidden-spouse-2">
+            This is where the submit option for the form will go so that the points can be calculated
+        </div><br>
+        
+</fieldset>
 </form>
+<script>
+    function myFunction() {
+      var x = document.getElementById("hidden-spouse-1");
+      if (x.style.display == "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
 </body>
 </html>
