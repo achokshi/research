@@ -4,32 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bare Bones Website</title>
-    <style>
-        
-        body {
-  --thumbNumber: "5"; 
-}
-
-#slider {
-  -webkit-appearance: none;
-  outline: none;
-  width: 400px;
-  height: 3px;
-  background-color: #555;
-}
-
-#slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-  background: black;
-}
-
-#slider::-webkit-slider-thumb::before {
-  content: var(--thumbNumber);
-}
-</style>
 </head>
 <body>
 <form>
@@ -98,12 +72,14 @@
             <hr>
 
         <!--This is the input for the secondary language skills of the applicant-->
+        
         <label for="secondary-langauge">Secondary Language Skills</label><br>
-        <p>Do you have a CLB level of at least 5 in each of the 4 langauge categories?</p><br>
+        <p>Do you have a Canadian Language Benchmark (CLB) level of at least 5 in each of the 4 langauge categories?</p><br>
         <input type="radio" name="secondary-langauge" value="yes">
         <label for="yes">Yes</label><br>
         <input type="radio" name="secondary-langauge" value="no">
         <label for="no">No</label><br>
+
         <hr>
     
         <!--This is the input for the work experience of the applicant-->
@@ -119,16 +95,13 @@
         <br>
     
         <!--This is the input to see if the applicant has a spouse,-->
-        <label for="spouse-option">Do you have a spouse?</label><br>
-        <button onclick="myFunction()">YES</button>
-        <div id="hidden-spouse-1">
-            <!--This is the input for the adaptability points of the applicant-->
-            This is where the adaptability points will go!!! then the submit button for the points to be calculated
-        </div><br>
+        <label for="spouse-adaptability">Spouse Adaptability</label><br>
+        <p>Do you have a spouse? Choose<b>ONE</b> answer</p><br>
+        <input type="radio" name="spouse-yes" value="yes">
+        <label for="yes">YES</label><br>
+        <input type="radio" name="spouse-no" value="no">
+        <label for="no">NO</label><br>
         
-        <button onclick="myFunction2()">NO</button>
-        <div id="hidden-spouse-2">
-            This is where the submit option for the form will go so that the points can be calculated
         </div><br>
         
 </fieldset>
