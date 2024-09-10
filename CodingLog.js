@@ -54,4 +54,7 @@ function calculateWorkExperience(){
 function calculateSpouseAdaptability(){
 
 }
+function adaptabilityDisplay(){
+    
+}
 
