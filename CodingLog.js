@@ -11,28 +11,28 @@ function calculateEducation(){
     const selectedEducationValue = selectElement.value;
     
     let educationScore = 0;
-    if(selectedEducationValue==="Secondary"){
+    if(selectedEducationValue=="Secondary"){
         educationScore = 5;
     }
-    else if(selectedEducationValue==="One-Year-Dip"){
+    else if(selectedEducationValue=="One-Year-Dip"){
         educationScore = 15;
     }
-    else if(selectedEducationValue==="Two-Year-Dip"){
+    else if(selectedEducationValue=="Two-Year-Dip"){
         educationScore = 19;
     }
-    else if (selectedEducationValue==="Bachelor"){
+    else if (selectedEducationValue=="Bachelor"){
         educationScore = 21;
     }
-    else if (selectedEducationValue==="Two-Plus-Certi"){
+    else if (selectedEducationValue=="Two-Plus-Certi"){
         educationScore = 22;
     }
-    else if(selectedEducationValue==="Proffesional"){
+    else if(selectedEducationValue=="Proffesional"){
         educationScore = 23;
     }
-    else if (selectedEducationValue==="Masters"){
+    else if (selectedEducationValue=="Masters"){
         educationScore = 23;
     }
-    else if (selectedEducationValue==="Doctoral"){
+    else if (selectedEducationValue=="Doctoral"){
         educationScore = 25;
     }
 
@@ -55,6 +55,6 @@ function calculateSpouseAdaptability(){
 
 }
 function adaptabilityDisplay(){
-    
+
 }
 

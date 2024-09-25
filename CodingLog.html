@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bare Bones Website</title>
+    <!--The following css will be moved to a different file later-->
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <form>
@@ -95,12 +101,15 @@
         <br>
     
         <!--This is the input to see if the applicant has a spouse,-->
-        <label for="spouse-adaptability">Spouse Adaptability</label><br>
-        <p>Do you have a spouse? Choose <b>ONE</b> answer</p><br>
-        <input type="radio" name="spouse-yes" value="yes">
-        <label for="yes">YES</label><br>
-            <div id="adaptabilityPoints" display="none">
-                <p>Has your spouse achieved the minimum language level for the Canadian Language Benchmark?</p><br>
+        <label>
+            <input type="radio" name="question" value="yes" onclick="toggleFormParts()"> Yes
+        </label>
+        <label>
+            <input type="radio" name="question" value="no" onclick="toggleFormParts()"> No
+        </label>
+
+        <div id="conditionalPart" class="hidden">
+            <p>Has your spouse achieved the minimum language level for the Canadian Language Benchmark?</p><br>
                 <input type="radio" name="spouseLangaugeYes" value="yes">
                 <label for="yes">YES</label>
                 <input type="radio" name="spouseLanguageNo" value="no">
@@ -141,13 +150,22 @@
                 <label for="yes">YES</label>
                 <input type="radio" name="relativesNo" value="no">
                 <label for="no">NO</label>
-            </div>
-        <input type="radio" name="spouse-no" value="no">
-        <label for="no">NO</label><br>
-        
-        </div><br>
-        
+        </div>
+        <br>
 </fieldset>
 </form>
+<!--The following java script will be moved to a different file later-->
+<script>
+    function toggleFormParts() {
+        const yesSelected = document.querySelector('input[name="question"]:checked').value === 'yes';
+        const conditionalPart = document.getElementById('conditionalPart');
+        
+        if (yesSelected) {
+            conditionalPart.classList.remove('hidden');
+        } else {
+            conditionalPart.classList.add('hidden');
+        }
+    }
+</script>
 </body>
 </html>
