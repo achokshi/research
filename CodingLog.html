@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bare Bones Website</title>
     <!--The following css will be moved to a different file later-->
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel = "stylesheet" type="text/css" href = "CodingLog.css">
+    <script src="CodingLog.js"></script>
 </head>
 <body>
 <form>
@@ -19,19 +16,19 @@
         <legend>Federal Skilled Workers Program </legend>
         
         <!--This is the input for the first name-->
-        <label for="fname">First name:</label><br>
+        <label for="fname">Enter your First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
         
         <!--This is the input for the last name-->
-        <label for="lname">Last name:</label><br>
+        <label for="lname">Enter your Last name:</label><br>
         <input type="text" id="lname" name="lname"><br>
         
         <!--This is the input for the age of the applicant-->
-        <label for="age">Age:</label><br>
-        <input type="text" id="age" name="age"><br>
-        
+        <label for="age">Enter your Age: </label><br>
+        <input type="number" id="age" name="age" min="1" max="120">
+        <br>
         <!--This is the input for the education level of the applicant-->
-        <label for="education">Education Level:</label><br>
+        <label for="education">Enter your Education Level:</label><br>
         <select id="education" name="education">
         <option value="Secondary">Secondary school (high school diploma)</option>
         <option value="One-Year-Dip">One-year degree, diploma or certificate</option>
@@ -45,6 +42,7 @@
         
         <!--This is the input for the primary language skills of the applicant-->
         <hr>
+        
         <label for="language-speak">Language Skills: Speaking:</label><br>
         <p><b>Enter your Speaking Level into the slider:</b></p> 
             <div>
@@ -53,6 +51,7 @@
             </div>
         <hr>
         <br>
+        
         <label for="language-listen">Language Skills: Listening:</label><br>
         <p><b>Enter your Listening Level into the slider:</b></p> 
         <div>
@@ -61,6 +60,7 @@
         </div>
         <hr>
         <br>
+        
         <label for="language-read">Language Skills: Reading</label><br>
         <p><b>Enter your Reading Level into the slider:</b></p> 
         <div>
@@ -69,6 +69,7 @@
         </div>
         <hr>
         <br>
+        
         <label for="language-write">Language Skills: Writing</label><br>
         <p><b>Enter your Writing Level into the slider:</b></p> 
             <div>
@@ -82,7 +83,7 @@
         <label for="secondary-langauge">Secondary Language Skills</label><br>
         <p>Do you have a Canadian Language Benchmark (CLB) level of at least 5 in each of the 4 langauge categories?</p><br>
         <input type="radio" name="secondary-langauge" value="yes">
-        <label for="yes">Yes</label><br>
+        <label for="yes">Yes</label>
         <input type="radio" name="secondary-langauge" value="no">
         <label for="no">No</label><br>
 
@@ -100,72 +101,77 @@
         <hr>
         <br>
     
-        <!--This is the input to see if the applicant has a spouse,-->
+        <!--This is the input to see if the applicant has a spouse, if not then the further form elements
+        will be hidden-->
+        
+        <p> Do you have a Spouse in the country with you?</p>
         <label>
             <input type="radio" name="question" value="yes" onclick="toggleFormParts()"> Yes
         </label>
         <label>
-            <input type="radio" name="question" value="no" onclick="toggleFormParts()"> No
+            <input type="radio" name="question" value="no" onclick="toggleFormParts()" checked> No
         </label>
 
         <div id="conditionalPart" class="hidden">
+            
+            <!--This is the piece of code for the spouse langauge option-->
             <p>Has your spouse achieved the minimum language level for the Canadian Language Benchmark?</p><br>
                 <input type="radio" name="spouseLangaugeYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="spouseLanguageNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="spouseLanguageNo" value="no" checked>
+                <label for="no">No</label>
                 <br>
+                
+                <!--This is the piece of code for the spouse past studies option-->
                 <p>Has your spouse completed at least 2 years in full time study?</p><br>
                 <input type="radio" name="spousePastStudiesYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="spousePastStudiesNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="spousePastStudiesNo" value="no" checked>
+                <label for="no">No</label>
                 <br>
+                
+                <!--This is the piece of code for the spouse past work experience option-->
                 <p>Has your spouse completed at least 1 year of full-time work in Canada?</p><br>
                 <input type="radio" name="spousePastWorkYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="spousePastWorkNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="spousePastWorkNo" value="no" checked>
+                <label for="no">No</label>
                 <br>
+                
+                <!--This is the piece of code for the personal past studies option-->
                 <p>Have you completed at least 2 academic years of full-time study?</p><br>
                 <input type="radio" name="personalPastStudiesYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="personalPastStudiesNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="personalPastStudiesNo" value="no" checked>
+                <label for="no">No</label>
                 <br>
+                
+                <!--This is the piece of code for the personal work experience option-->
                 <p>Have you done at least 1 year of full-time work in Canada?</p><br>
                 <input type="radio" name="personalPastWorkYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="personalPastWorkNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="personalPastWorkNo" value="no" checked>
+                <label for="no">No</label>
                 <br>
+                
+                <!--This is the piece of code for the arranged employment option-->
                 <p>Do you have arranged employment in Canada?</p><br>
                 <input type="radio" name="arrangedEmploymentYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="arrangedEmploymentNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="arrangedEmploymentNo" value="no" checked>
+                <label for="no">No</label>
                 <br>
+                
+                <!--This is the piece of code for a qualifying relative option-->
                 <p>Do you, your spouse or common-law partner have a qualifying relative?</p><br>
                 <input type="radio" name="relativesYes" value="yes">
-                <label for="yes">YES</label>
-                <input type="radio" name="relativesNo" value="no">
-                <label for="no">NO</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="relativesNo" value="no" checked>
+                <label for="no">No</label>
         </div>
         <br>
 </fieldset>
 </form>
 <!--The following java script will be moved to a different file later-->
-<script>
-    function toggleFormParts() {
-        const yesSelected = document.querySelector('input[name="question"]:checked').value === 'yes';
-        const conditionalPart = document.getElementById('conditionalPart');
-        
-        if (yesSelected) {
-            conditionalPart.classList.remove('hidden');
-        } else {
-            conditionalPart.classList.add('hidden');
-        }
-    }
-</script>
 </body>
 </html>

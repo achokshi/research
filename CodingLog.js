@@ -41,20 +41,35 @@ function calculateEducation(){
 function calculatePrimaryLangauge(){
     
 }
+
 function calculateSecondaryLangauge(){
-    let secondaryLangaugeScore=0;
+    let secondaryLangaugeScore = 0;
     let radioButtonValue = document.getElementById("secondaryLangauge").value;
-    if(radioButtonValue==="Yes"){
-        secondaryLangaugeScore =
+    if(radioButtonValue === "Yes"){
+        secondaryLangaugeScore = 4;
     }
+    return secondaryLangaugeScore;
 }
+
 function calculateWorkExperience(){
 
 }
+
 function calculateSpouseAdaptability(){
 
 }
 function adaptabilityDisplay(){
 
+}
+
+function toggleFormParts() {
+    const yesSelected = document.querySelector('input[name="question"]:checked').value === 'yes';
+    const conditionalPart = document.getElementById('conditionalPart');
+    
+    if (yesSelected) {
+        conditionalPart.classList.remove('hidden');
+    } else {
+        conditionalPart.classList.add('hidden');
+    }
 }
 
