@@ -73,3 +73,10 @@ function toggleFormParts() {
     }
 }
 
+function checkLanguage() {
+    const yesSelected = document.querySelector('input[name="question"]:checked').value === 'yes';
+    if(yesSelected){
+        document.getElementById()
+    }
+};
+
