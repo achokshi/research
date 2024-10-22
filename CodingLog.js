@@ -7,6 +7,9 @@ Once the comparison is done, we assign a value to the variable for the final cal
 The applicants score*/
 }
 function calculateEducation(){
+    /* This is the function to calculate the e,.Mducation score
+    *
+    */
     const selectElement = document.getElementById('education');
     const selectedEducationValue = selectElement.value;
     
@@ -38,6 +41,16 @@ function calculateEducation(){
 
     return educationScore;
 }
+
+function calculateArrangedEmployment(){
+    let arrangedEmploymentScore = 0;
+    let radioButtonValue = document.getElementById("arrangedEmployment").value;
+    if(radioButtonValue === "Yes"){
+        arrangedEmploymentScore = 10;
+    }
+    return arrangedEmploymentScore;
+}
+
 function calculatePrimaryLangauge(){
     
 }
@@ -52,14 +65,49 @@ function calculateSecondaryLangauge(){
 }
 
 function calculateWorkExperience(){
-
+    const selectElement = document.getElementById('experience');
+    const selectedEducationValue = selectElement.value;
+    secondaryLangaugeScore = 0;
+    if(selectedEducationValue=="under_1"){
+        secondaryLangaugeScore = 0;
+    }
+    else if(selectedEducationValue=="1_year"){
+        secondaryLangaugeScore = 9;
+    }
+    else if(selectedEducationValue=="2-3_years"){
+        secondaryLangaugeScore = 11;
+    }
+    else if(selectedEducationValue=="=4-5_years"){
+        secondaryLangaugeScore = 13;
+    }
+    else if(selectedEducationValue=="6_or_more"){
+        secondaryLangaugeScore = 15;
+    }
+    return secondaryLangaugeScore;
 }
 
-function calculateSpouseAdaptability(){
+function calculateAdaptability(){
+    const selectElement = document.getElementById('conditionalPart');
+    const selectedAdaptabilityValue = selectElement.value;
+    const selectElement2 = document.getElementById('adaptabilityNiche');
+    const selectedAdaptabilityValue2 = selectElement2.value;
 
-}
-function adaptabilityDisplay(){
-
+    adaptabilityScore = 0;
+    while (adaptabilityScore <=10){
+        if(selectedAdaptabilityValue=="Yes"){
+            adaptabilityScore +=5;
+        }
+        else if(selectedAdaptabilityValue=="No"){
+            adaptabilityScore = 0;
+        }
+        if(selectedAdaptabilityValue2=="Yes"){
+            adaptabilityScore +=10;
+        }
+        else if(selectedAdaptabilityValue2=="No"){
+            adaptabilityScore = 0;
+        }
+    }
+    return adaptabilityScore;
 }
 
 function toggleFormParts() {
