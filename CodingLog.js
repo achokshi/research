@@ -2,7 +2,11 @@
 we will increase the score for each segement in the form*/
 let finalScore = 0;
 function calculateAge(){
-/*For this function we must compare the user's choice to the specified string chosen 
+let ageScore = 0;
+
+
+
+    /*For this function we must compare the user's choice to the specified string chosen 
 Once the comparison is done, we assign a value to the variable for the final calcualtion of 
 The applicants score*/
 }
@@ -52,7 +56,16 @@ function calculateArrangedEmployment(){
 }
 
 function calculatePrimaryLangauge(){
-    
+   let primaryLangaugeScore = 0;
+   let additionalPoints = 4;
+   let sliderValue1 = document.getElementById("sliderSpeak").value;
+   let sliderValue2 = document.getElementById("sliderListen").value;
+   let sliderValue3 = document.getElementById("sliderRead").value;
+   let sliderValue4 = document.getElementById("sliderWrite").value;
+   primaryLangaugeScore = sliderValue1 + sliderValue2 + sliderValue3 + sliderValue4;
+   if(sliderValue1 && sliderValue2 && sliderValue3 && sliderValue4 >= 5){
+     primaryLanguageScore += additionalPoints;
+   }
 }
 
 function calculateSecondaryLangauge(){
