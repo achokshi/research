@@ -3,185 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bare Bones Website</title>
-    <!--The following css will be moved to a different file later-->
+    <title>Federal Skills Workers Program</title>
+    <The following css will be moved to a different file later-->
     <link rel = "stylesheet" type="text/css" href = "CodingLog.css">
     <script src="CodingLog.js"></script>
 </head>
 <body>
-<form>
+<form id="fsw-form">
     <fieldset>
         
         <!--This is the title of the fieldset within the form page-->
         <legend>Federal Skilled Workers Program </legend>
         
+        <!--This is the description of the form page for the user-->
+        <b><p>Greetings, fellow candidate. This form is designed to give you a brief overview of <b><i>if</i></b> you will be eligible for
+            migration into the country given specific inputs by your specifications </p></b>
+        
         <!--This is the input for the first name-->
-        <label for="fname">Enter your First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
+        <label>Enter your First Name:
+            <input type="text" id="first-name" required>
+        </label><br><br>
         
         <!--This is the input for the last name-->
-        <label for="lname">Enter your Last name:</label><br>
-        <input type="text" id="lname" name="lname"><br>
+        <label>Enter your Last Name:
+            <input type="text" id="last-name" required>
+        </label><br><br>
         
         <!--This is the input for the age of the applicant-->
-        <label for="age">Enter your Age: </label><br>
-        <input type="number" id="age" name="age" min="1" max="120">
-        <br>
+        <label>Enter your Age:
+            <input type="number" id="age" min="16" max="120" required>
+          </label><br><br>
+        
         <!--This is the input for the education level of the applicant-->
-        <label for="education">Enter your Education Level:</label><br>
-        <select id="education" name="education">
-        <option value="Secondary">Secondary school (high school diploma)</option>
-        <option value="One-Year-Dip">One-year degree, diploma or certificate</option>
-        <option value="Two-Year-Dip">Two-year degree, diploma or certificate</option>
-        <option value="Bachelor">Bachelor's degree or other programs (three or more years)</option>
-        <option value="Two-Plus-Certi">Two or more certificates, diplomas, or degrees</option>
-        <option value="Proffesional">Professional degree needed to practice in a licensed profession</option>
-        <option value="Masters">University degree at the Master's level</option>
-        <option value="Doctoral">University degree at the Doctoral (PhD) level</option>
-        </select><br><br>
+        <label>Education Level:
+            <select id="education-level" required>
+              <option value="5">Secondary school (high school diploma)</option>
+              <option value="15">One-year degree, diploma or certificate</option>
+              <option value="19">Two-year degree, diploma or certificate</option>
+              <option value="21">Bachelor's degree or other programs (three or more years)</option>
+              <option value="22">Two or more certificates, diplomas, or degrees</option>
+              <option value="23">Professional degree needed to practice in a licensed profession</option>
+              <option value="23">University degree at the Master's level</option>
+              <option value="25">University degree at the Doctoral (PhD) level</option>
+            </select>
+          </label><br>
         
-        <!--This is the input for the primary language skills of the applicant-->
+        <!--This is the input for the primary language skills of the applicant. The input is in the form of a slider -->
         <hr>
-        
-        <label for="language-speak">Language Skills: Speaking:</label><br>
-        <p><b>Enter your Speaking Level into the slider:</b></p> 
-            <div>
-                <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
-                <output>5</output>
-            </div>
+        <h3>Primary Language Skills (0-10)</h3>
+        <!--Speaking level of the applicant with the automatic set value of 5-->
+        <div class="slider-container">
+            <label>Language Speak:</label>
+            <input type="range" id="language-speak" min="0" max="10" value="0" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+          </div>
         <hr>
         <br>
         
-        <label for="language-listen">Language Skills: Listening:</label><br>
-        <p><b>Enter your Listening Level into the slider:</b></p> 
-        <div>
-            <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
-            <ouput>5</ouput>
+        <!--Listening level of the applicant with the automatic set value of 5-->
+        <div class="slider-container">
+            <label>Language Listen:</label>
+            <input type="range" id="language-listen" min="0" max="10" value="0" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+          </div>
+        <hr>
+        <br>
+        
+        <!--Reading level of the applicant with the automatic set value of 5-->
+        <div class="slider-container">
+            <label>Language Write:</label>
+                <input type="range" id="language-write" min="0" max="10" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
         </div>
         <hr>
         <br>
         
-        <label for="language-read">Language Skills: Reading</label><br>
-        <p><b>Enter your Reading Level into the slider:</b></p> 
-        <div>
-            <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
-            <output>5</output>
+        <!--Writing level of the applicant with the automatic set value of 5-->
+        <div class="slider-container">
+            <label>Language Read:</label>
+                <input type="range" id="language-read" min="0" max="10" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
         </div>
         <hr>
         <br>
-        
-        <label for="language-write">Language Skills: Writing</label><br>
-        <p><b>Enter your Writing Level into the slider:</b></p> 
-            <div>
-                <input type="range" min="0" max="10" value="5" id="slider" oninput="this.nextElementSibling.value = this.value">
-                <output>5</output>
-            </div>
-            <hr>
 
         <!--This is the input for the secondary language skills of the applicant-->
-        
-        <label for="secondary-langauge">Secondary Language Skills</label><br>
-        <p>Do you have a Canadian Language Benchmark (CLB) level of at least 5 in each of the 4 langauge categories?</p><br>
-        <input type="radio" name="secondary-langauge" value="yes">
-        <label for="yes">Yes</label>
-        <input type="radio" name="secondary-langauge" value="no">
-        <label for="no">No</label><br>
-
+        <label>Do you have a Canadian Language Benchmark (CLB) level of at least 5 in each of the 4 language categories?</label>
+            <input type="radio" id="clb-yes" name="clb" value="yes"> Yes
+            <input type="radio" id="clb-no" name="clb" value="no" checked> No
         <hr>
     
         <!--This is the input for the work experience of the applicant-->
-        <label for="experience">Work experience level:</label><br>
-        <select id="experience" name="experience">
-        <option value="under_1">Under 1 Year</option>
-        <option value="1_year">1 Year</option>
-        <option value="2-3_years">2 to 3 Years</option>
-        <option value="4-5_years">4 to 5 Years</option>
-        <option value="6_or_more">6 or more Years</option>
-        </select><br><br>
+        <label>What is your work experience level?</label>
+            <select id="work-experience" required>
+                <option value="0">Under 1 year</option>
+                <option value="9">1 year</option>
+                <option value="11">2-3 years</option>
+                <option value="13">4-5 years</option>
+                <option value="15">6 or more years</option>
+            </select><br><br>
         <hr>
         <br>
     
-        <p>Do you have arranged employment within the country</p><br>
-        <input type="radio" name="arrangedEmploymentYes" value="yes">
-        <label for="yes">Yes</label>
-        <input type="radio" name="arrangedEmploymentNo" value="no" checked>
-        <label for="no">No</label>
+        
+        <label>Do you have arranged employment?</label>
+            <input type="radio" id="employment-yes" name="employment" value="yes"> Yes
+            <input type="radio" id="employment-no" name="employment" value="no" checked> No
+        <br>
         <hr>
         <br>
+
+        
         
         <!--This is the input to see if the applicant has a spouse, if not then the further form elements
         will be hidden-->
-        
         <p> Do you have a Spouse in the country with you?</p>
-        <label>
-            <input type="radio" name="question" value="yes" onclick="toggleFormParts()"> Yes
-        </label>
-        <label>
-            <input type="radio" name="question" value="no" onclick="toggleFormParts()" checked> No
-        </label>
+        <input type="radio" id="spouse-yes" name="spouse" value="yes"> Yes
+        <input type="radio" id="spouse-no" name="spouse" value="no" onclick="toggleFormParts()" checked > No
 
-        <div id="conditionalPart" class="hidden">
-            
-            <!--This is the piece of code for the spouse langauge option-->
-            <p>Has your spouse achieved the minimum language level for the Canadian Language Benchmark?</p><br>
-                <input type="radio" name="spouseLangaugeYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="spouseLanguageNo" value="no" checked>
-                <label for="no">No</label>
-                <br>
-                
-                <!--This is the piece of code for the spouse past studies option-->
-                <p>Has your spouse completed at least 2 years in full time study?</p><br>
-                <input type="radio" name="spousePastStudiesYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="spousePastStudiesNo" value="no" checked>
-                <label for="no">No</label>
-                <br>
-                
-                <!--This is the piece of code for the spouse past work experience option-->
-                <p>Has your spouse completed at least 1 year of full-time work in Canada?</p><br>
-                <input type="radio" name="spousePastWorkYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="spousePastWorkNo" value="no" checked>
-                <label for="no">No</label>
-                <br>
-                
-                <!--This is the piece of code for the personal past studies option-->
-                <p>Have you completed at least 2 academic years of full-time study?</p><br>
-                <input type="radio" name="personalPastStudiesYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="personalPastStudiesNo" value="no" checked>
-                <label for="no">No</label>
-                <br>
-                
-                <!--This is the piece of code for the personal work experience option-->
-                <p id=>Have you done at least 1 year of full-time work in Canada?</p><br>
-                <input type="radio" name="personalPastWorkYes" value="yes" id="adaptabilityNiche">
-                <label for="yes" id="adaptabilityNiche">Yes</label>
-                <input type="radio" name="personalPastWorkNo" value="no" checked id="adaptabilityNiche">
-                <label for="no">No</label>
-                <br>
-                
-                <!--This is the piece of code for the arranged employment option-->
-                <p>Do you have arranged employment in Canada?</p><br>
-                <input type="radio" name="arrangedEmploymentYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="arrangedEmploymentNo" value="no" checked>
-                <label for="no">No</label>
-                <br>
-                
-                <!--This is the piece of code for a qualifying relative option-->
-                <p>Do you, your spouse or common-law partner have a qualifying relative?</p><br>
-                <input type="radio" name="relativesYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="relativesNo" value="no" checked>
-                <label for="no">No</label>
-        </div>
-        <br>
+        <!--This is the piece of code for the spouse langauge option-->
+    <div id = "conditionalPart">
+    <p>Has your spouse reached the required CLB level?</p><br>
+    <input type="radio" name="spouseLangauge" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="spouseLangauge" value="no" checked>
+    <label for="no">No</label>
+    <br>
+    
+    <!--This is the piece of code for the spouse past studies option-->
+    <p>Has your spouse completed at least 2 years in full time study?</p><br>
+    <input type="radio" name="spousePastStudies" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="spousePastStudies" value="no" checked>
+    <label for="no">No</label>
+    <br>
+    
+    <!--This is the piece of code for the spouse past work experience option-->
+    <p>Has your spouse completed at least 1 year of full-time work in Canada?</p><br>
+    <input type="radio" name="spousePastWork" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="spousePastWork" value="no" checked>
+    <label for="no">No</label>
+    <br>
+    
+    <!--This is the piece of code for the personal past studies option-->
+    <p>Have you completed at least 2 academic years of full-time study?</p><br>
+    <input type="radio" name="personalPastStudies" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="personalPastStudies" value="no" checked>
+    <label for="no">No</label>
+    <br>
+    
+    <!--This is the piece of code for the personal work experience option. May not need to be added since the 
+    candidate is trying to get into the country-->
+    <p>Have you done at least 1 year of full-time work in Canada?</p><br>
+    <input type="radio" name="personalPastWork" value="yes" id="adaptabilityNiche">
+    <label for="yes" id="adaptabilityNiche">Yes</label>
+    <input type="radio" name="personalPastWork" value="no" checked id="adaptabilityNiche">
+    <label for="no">No</label>
+    <br>
+    
+    <!--This is the piece of code for the arranged employment option-->
+    <p>Do you have arranged employment within Canada?</p><br>
+    <input type="radio" name="arrangedEmploymentPersonal" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="arrangedEmploymentPersonal" value="no" checked>
+    <label for="no">No</label>
+    <br>
+    
+    <!--This is the piece of code for a qualifying relative option-->
+    <p>Do you, your spouse or common-law partner have a qualifying relative?</p><br>
+    <input type="radio" name="relatives" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="relatives" value="no" checked>
+    <label for="no">No</label>
+    </div>
+
         <!--This button is ton reset all the values inputted into the form-->
-        <input type="reset" value="Reset">
+        <button type="button" onclick="resetForm()">Reset</button>
         <!--This button is to submit the form, onclick, the results of the scores will be displayed into the form-->
-        <input type="submit" value="Submit">
+        <button type="button" onclick="calculateScore()">Submit</button>
 </fieldset>
 </form>
 </body>
