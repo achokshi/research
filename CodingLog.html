@@ -1,15 +1,23 @@
+<!--This HTML form is part of the Federal Skilled Workers Program application process. 
+ It collects information about the applicant, including their personal details, language skills, 
+ work experience, and spousal information. The form is designed to provide a brief overview of the 
+ applicant's eligibility for migration into the country based on the provided inputs.-->
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the webpage-->
     <title>Federal Skills Workers Program</title>
-    <The following css will be moved to a different file later-->
+    <!--Linking the css style sheet to the html page-->
     <link rel = "stylesheet" type="text/css" href = "CodingLog.css">
+    <!--Linking the Javascript to the html page-->
     <script src="CodingLog.js"></script>
 </head>
 <body>
-<form id="fsw-form">
+    <!--Creation of the form, id of the form is fsw-form-->
+    <form id="fsw-form">
     <fieldset>
         
         <!--This is the title of the fieldset within the form page-->
@@ -89,6 +97,8 @@
 
         <!--This is the input for the secondary language skills of the applicant-->
         <label>Do you have a Canadian Language Benchmark (CLB) level of at least 5 in each of the 4 language categories?</label>
+        <br>
+        <br>
             <input type="radio" id="clb-yes" name="clb" value="yes"> Yes
             <input type="radio" id="clb-no" name="clb" value="no" checked> No
         <hr>
@@ -107,6 +117,8 @@
     
         
         <label>Do you have arranged employment?</label>
+        <br>
+        <br>
             <input type="radio" id="employment-yes" name="employment" value="yes"> Yes
             <input type="radio" id="employment-no" name="employment" value="no" checked> No
         <br>
@@ -127,62 +139,64 @@
             
             <!--This is the piece of code for the spouse langauge option-->
             <p>Has your spouse achieved the minimum language level for the Canadian Language Benchmark?</p><br>
-                <input type="radio" name="spouseLangaugeYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="spouseLanguageNo" value="no" checked>
-                <label for="no">No</label>
+                <input type="radio" id="spouse_lang_yes" name="spouse_lang" value="Yes">
+                <label for="spouse_lang_yes">Yes</label>
+                <input type="radio" id="spouse_lang_no" name="spouse_lang" value="No" checked>
+                <label for="spouse_lang_no">No</label><br>
                 <br>
                 
                 <!--This is the piece of code for the spouse past studies option-->
                 <p>Has your spouse completed at least 2 years in full time study?</p><br>
-                <input type="radio" name="spousePastStudiesYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="spousePastStudiesNo" value="no" checked>
-                <label for="no">No</label>
+                <input type="radio" id="spouse_studies_yes" name="spouse_studies" value="Yes">
+                <label for="spouse_studies_yes">Yes</label>
+                <input type="radio" id="spouse_studies_no" name="spouse_studies" value="No" checked>
+                <label for="spouse_studies_no">No</label><br>
                 <br>
                 
                 <!--This is the piece of code for the spouse past work experience option-->
-                <p>Has your spouse completed at least 1 year of full-time work in Canada?</p><br>
-                <input type="radio" name="spousePastWorkYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="spousePastWorkNo" value="no" checked>
-                <label for="no">No</label>
+                <p>Has your spouse completed at least 1 year of full-time work in Canada; 'no' otherwise</p>
+                <input type="radio" id="spouse_work_yes" name="spouse_work" value="Yes">
+                <label for="spouse_work_yes">Yes</label>
+                <input type="radio" id="spouse_work_no" name="spouse_work" value="No" checked>
+                <label for="spouse_work_no">No</label><br>
                 <br>
                 
                 <!--This is the piece of code for the personal past studies option-->
                 <p>Have you completed at least 2 academic years of full-time study?</p><br>
-                <input type="radio" name="personalPastStudiesYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="personalPastStudiesNo" value="no" checked>
-                <label for="no">No</label>
+                <input type="radio" id="personal_studies_yes" name="personal_studies" value="Yes">
+                <label for="personal_studies_yes">Yes</label>
+                <input type="radio" id="personal_studies_no" name="personal_studies" value="No" checked>
+                <label for="personal_studies_no">No</label><br>
                 <br>
                 
                 <!--This is the piece of code for the personal work experience option-->
-                <p id=>Have you done at least 1 year of full-time work in Canada?</p><br>
-                <input type="radio" name="personalPastWorkYes" value="yes" id="adaptabilityNiche">
-                <label for="yes" id="adaptabilityNiche">Yes</label>
-                <input type="radio" name="personalPastWorkNo" value="no" checked id="adaptabilityNiche">
-                <label for="no">No</label>
+                <p>Have you done at least 1 year of full-time work in Canada?</p><br>
+                <input type="radio" id="personal_work_yes" name="personal_work" value="Yes">
+                <label for="personal_work_yes">Yes</label>
+                <input type="radio" id="personal_work_no" name="personal_work" value="No" checked>
+                <label for="personal_work_no">No</label><br>
                 <br>
                 
                 <!--This is the piece of code for the arranged employment option-->
                 <p>Do you have arranged employment in Canada?</p><br>
-                <input type="radio" name="arrangedEmploymentYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="arrangedEmploymentNo" value="no" checked>
-                <label for="no">No</label>
+                <input type="radio" id="arranged_employment_yes" name="arranged_employment" value="Yes">
+                <label for ="arranged_employment_yes">Yes</label>
+                <input type="radio" id ="arranged_employment_no" name="arranged_employment" value="No" checked>
+                <label for="arranged_employment_no">No</label><br>
                 <br>
                 
                 <!--This is the piece of code for a qualifying relative option-->
                 <p>Do you, your spouse or common-law partner have a qualifying relative?</p><br>
-                <input type="radio" name="relativesYes" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="relativesNo" value="no" checked>
-                <label for="no">No</label>
+                <input type="radio" id="qualifying_rel_yes" name="qualifying_relative" value="Yes">
+                <label for="qualifying_rel_yes">Yes</label>
+                <input type="radio" id="qualifying_rel_no" name="qualifying_relative" value="No" checked>
+                <label for="qualifying_rel_no">No</label>
         </div>
+        <br>
+        <br>
 
         <!--This button is ton reset all the values inputted into the form-->
-        <button type="button" onclick="resetForm()">Reset</button>
+        <button type="button">Reset</button>
         <!--This button is to submit the form, onclick, the results of the scores will be displayed into the form-->
         <button type="button" onclick="calculateScore()">Submit</button>
 </fieldset>
